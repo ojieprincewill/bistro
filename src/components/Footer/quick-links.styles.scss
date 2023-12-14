@@ -1,0 +1,32 @@
+.container {
+  margin: 0 0 0 30px;
+
+  .quick-header {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e6e6e6;
+    margin: 0 0 30px;
+  }
+
+  .quick-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .quick-link {
+      font-size: 16px;
+      font-weight: 500;
+      color: #cf1d16;
+      margin: 5px 0;
+      padding: auto;
+      border-bottom: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: #e6e6e6;
+      }
+    }
+  }
+}

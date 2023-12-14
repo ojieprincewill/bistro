@@ -1,0 +1,44 @@
+.container {
+  margin: 0 0 0 30px;
+
+  .aboutus-header {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e6e6e6;
+    margin: 0 0 30px;
+  }
+
+  .aboutus-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #868e96;
+    margin: 0;
+  }
+
+  .socials-cont {
+    display: flex;
+    margin: 50px 0 0 0;
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: transparent;
+      color: #cf1d16;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+      margin: 0 5px 5px 0;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #e6e6e6;
+        color: #222;
+      }
+    }
+  }
+}
