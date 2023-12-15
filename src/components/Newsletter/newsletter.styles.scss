@@ -1,13 +1,10 @@
 .newsletter {
-  display: flex;
-  flex-direction: column;
   background-color: #f8f9fa;
-  justify-content: center;
-  align-items: center;
   padding: 70px 0;
 
   .news-title {
     font-size: 30px;
+    text-align: center;
     font-weight: 550;
     color: #222;
     margin: 0 0 16px 0;
@@ -19,20 +16,21 @@
     text-align: center;
     font-weight: 450;
     color: #868e96;
-    margin: 0 0 20px 0;
+    margin: 0 auto 20px;
   }
 
   .form-cont {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0 16px 0;
+    display: grid;
+    width: 65%;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto 0 330px;
 
     .news-input {
       width: 100%;
-      padding: 12px 30px 12px 12px;
+      height: auto;
+      padding: 12px;
       background-color: #fff;
-      border: 2px solid #868e96;
+      border: 2px solid #ced4da;
       font-size: 16px;
       color: #222;
       transition: all 0.3s ease;

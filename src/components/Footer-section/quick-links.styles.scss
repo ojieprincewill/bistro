@@ -14,11 +14,11 @@
     justify-content: flex-start;
 
     .quick-link {
+      width: max-content;
       font-size: 16px;
       font-weight: 500;
       color: #cf1d16;
       margin: 5px 0;
-      padding: auto;
       border-bottom: 1px solid transparent;
       cursor: pointer;
       transition: all 0.2s ease;

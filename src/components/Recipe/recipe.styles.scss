@@ -1,0 +1,23 @@
+.recipe {
+  background-image: url("https://preview.colorlib.com/theme/eatery/img/hero_2.jpg.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 95vh;
+
+  .recipe-header-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px 0 0;
+  }
+
+  .recipe-header {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: #fff;
+  }
+}

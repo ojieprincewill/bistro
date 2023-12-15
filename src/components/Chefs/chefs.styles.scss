@@ -1,12 +1,13 @@
-.blog-cont {
+.chefs-cont {
   padding: 105px 0;
+  background-color: #f8f9fa;
 
-  .blog-text-cont {
+  .chefs-text-cont {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .blog-title {
+    .chefs-title {
       position: relative;
       z-index: 2;
       font-size: 50px;
@@ -28,7 +29,7 @@
       }
     }
 
-    .blog-watermark {
+    .chefs-watermark {
       position: absolute;
       z-index: 0;
       text-transform: uppercase;

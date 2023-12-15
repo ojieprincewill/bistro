@@ -6,7 +6,7 @@ import Menu from "../../components/Menu/menu.component";
 import Testimonial from "../../components/Testimonial/testimonial.component";
 import Blog from "../../components/Blog/blog.component";
 import Newsletter from "../../components/Newsletter/newsletter.component";
-import FooterSection from "../../components/Footer/footer-section.component";
+import FooterSection from "../../components/Footer-section/footer-section.component";
 
 const HomePage = () => {
   return (
