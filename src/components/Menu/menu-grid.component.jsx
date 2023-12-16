@@ -2,6 +2,9 @@ import React from "react";
 
 import "./menu-grid.styles.scss";
 
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 const menuItems = [
   {
     image: "	https://preview.colorlib.com/theme/eatery/img/dishes_2.jpg",
@@ -35,8 +38,29 @@ const menuItems = [
 ];
 
 const MenuGrid = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  const menuGridVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const transition = {
+    duration: 0.7,
+    delay: inView ? 0.3 : 0,
+  };
+
   return (
-    <div className="menu-grid">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={menuGridVariants}
+      transition={transition}
+      className="menu-grid"
+    >
       <div className="menu-flex">
         {menuItems.slice(0, 2).map((item) => (
           <div className="item-flex">
@@ -65,7 +89,7 @@ const MenuGrid = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

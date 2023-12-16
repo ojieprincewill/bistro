@@ -2,6 +2,9 @@ import React from "react";
 
 import "./chefs-grid.styles.scss";
 
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 const chefs = [
   {
     name: "Megumi West",
@@ -21,8 +24,29 @@ const chefs = [
 ];
 
 const ChefsGrid = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  const chefsGridVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const transition = {
+    duration: 0.7,
+    delay: inView ? 0.3 : 0,
+  };
+
   return (
-    <div className="chefs-grid-container">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={chefsGridVariants}
+      transition={transition}
+      className="chefs-grid-container"
+    >
       <div className="chefs-wrapper">
         {chefs.map((chef, index) => (
           <div key={index} className="chef-item">
@@ -36,7 +60,7 @@ const ChefsGrid = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -2,15 +2,21 @@ import React from "react";
 
 import "./about.styles.scss";
 import Navigation from "../Navigation/navigation.component";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
     <>
       <div className="about">
         <Navigation />
-        <div className="about-header-cont">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="about-header-cont"
+        >
           <p className="about-header">About us</p>
-        </div>
+        </motion.div>
       </div>
       <div className="about-grid">
         <div className="about-image-flex">

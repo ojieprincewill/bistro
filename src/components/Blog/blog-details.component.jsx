@@ -7,6 +7,7 @@ import { BLOG_CONTENT } from "../../assets/blogcontent/blog-content";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { BsDot } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const BlogDetails = () => {
   const { blogId } = useParams();
@@ -22,7 +23,12 @@ const BlogDetails = () => {
     <>
       <div className="blog-details-cont">
         <Navigation />
-        <div className="blog-header-cont">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="blog-header-cont"
+        >
           <p className="blog-header">Bistro Blogs and News</p>
           <p className="blog-sub-header">
             {date}
@@ -31,7 +37,7 @@ const BlogDetails = () => {
             </span>
             By {author}
           </p>
-        </div>
+        </motion.div>
       </div>
       <div className="breadcrumbs">
         <Link

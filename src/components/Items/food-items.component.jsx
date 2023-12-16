@@ -6,10 +6,33 @@ import cheers from "../../assets/flaticons/cheers.png";
 import coffeeCup from "../../assets/flaticons/coffee-cup.png";
 import fish from "../../assets/flaticons/fish.png";
 import salad from "../../assets/flaticons/salad.png";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const FoodItems = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const transition = {
+    duration: 0.7,
+    delay: inView ? 0.3 : 0,
+  };
+
   return (
-    <div className="food-items-cont">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={itemVariants}
+      transition={transition}
+      className="food-items-cont"
+    >
       <div className="food-items">
         <img src={cheers} alt="flat-icon-cheers" className="food-item" />
         <p className=" food-title">Refreshing Drinks</p>
@@ -42,7 +65,7 @@ const FoodItems = () => {
           necessitatibus saepe eveniet ut et voluptates repudiandae.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

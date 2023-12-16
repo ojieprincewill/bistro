@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 import "./dish-carousel.styles.scss";
 
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 const dishes = [
   {
     image: "https://preview.colorlib.com/theme/eatery/img/dishes_4.jpg",
@@ -37,9 +40,31 @@ const DishCarousel = () => {
   const calculateOffset = () => {
     return -((currentDishIndex - 1) * dishWidth);
   };
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  const dishCarouselVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const transition = {
+    duration: 0.7,
+    delay: inView ? 0.3 : 0,
+  };
+
   return (
     <>
-      <div className="carousel-container">
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={dishCarouselVariants}
+        transition={transition}
+        className="carousel-container"
+      >
         <div
           className="carousel-wrapper"
           style={{
@@ -56,7 +81,7 @@ const DishCarousel = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
       <div className="dish-pagination-dots">
         {dishes.map((_, index) => (
           <span

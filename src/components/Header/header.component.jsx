@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 
 import "./header.styles.scss";
 import Navigation from "../Navigation/navigation.component";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -88,7 +89,10 @@ const Header = () => {
     <>
       <div style={containerStyles}>
         <Navigation />
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
           onMouseEnter={() => setShowArrows(true)}
           onMouseLeave={() => setShowArrows(false)}
           className="header"
@@ -115,7 +119,7 @@ const Header = () => {
             </span>
           )}
           <button className="head-button">Get started</button>
-        </div>
+        </motion.div>
         <div className="pagination-dots">
           {images.map((_, index) => (
             <span

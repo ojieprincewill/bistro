@@ -6,14 +6,49 @@ import { MdLocationPin } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 const ContactForm = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
+  const contactVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const contactTransition = {
+    duration: 0.7,
+    delay: inView ? 0.4 : 0,
+  };
+
+  const contactFormTransition = {
+    duration: 0.7,
+    delay: inView ? 0.3 : 0,
+  };
   return (
     <div className="contact-form">
-      <div className="contact-form-text-cont">
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={contactVariants}
+        transition={contactTransition}
+        className="contact-form-text-cont"
+      >
         <p className="contact-form-title">Get In Touch</p>
         <span className="contact-form-watermark">Contact Form</span>
-      </div>
-      <div className="contact-form-grid">
+      </motion.div>
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={contactVariants}
+        transition={contactFormTransition}
+        className="contact-form-grid"
+      >
         <div className="form">
           <div className="form-flex">
             <div>
@@ -60,7 +95,7 @@ const ContactForm = () => {
             <p className="info-text">info@yourdomain.com</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
