@@ -55,3 +55,47 @@
     }
   }
 }
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .chefs-grid-container {
+    .chefs-wrapper {
+      flex-wrap: wrap;
+
+      .chef-item {
+        width: calc(50% - 30px);
+
+        .chef-image-cont {
+          width: 350px;
+          height: 350px;
+        }
+
+        .chef-card {
+          width: 350px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .chefs-grid-container {
+    .chefs-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      .chef-item {
+        display: flex;
+        flex-direction: column;
+
+        .chef-image-cont {
+          width: 100%;
+          height: auto;
+        }
+
+        .chef-card {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

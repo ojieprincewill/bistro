@@ -93,3 +93,48 @@
     }
   }
 }
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .header {
+    margin: 120px 0 0;
+
+    .head-title {
+      font-size: 38px;
+      margin: 0;
+    }
+
+    .head-text {
+      width: 50%;
+      font-size: 17px;
+      margin: 0 0 10px;
+    }
+
+    .head-button {
+      margin: 10px 0 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    margin: unset;
+    margin-top: 0;
+    padding: 120px 0 0;
+
+    .head-title {
+      text-align: center;
+      font-size: 30px;
+      margin: 0;
+    }
+
+    .head-text {
+      width: 100%;
+      font-size: 16px;
+      margin: 0 0 10px;
+    }
+
+    .head-button {
+      margin: 10px 0 0;
+    }
+  }
+}

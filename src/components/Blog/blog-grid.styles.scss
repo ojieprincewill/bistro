@@ -14,6 +14,7 @@
     .blog-image-cont {
       width: 270px;
       height: 302px;
+      z-index: 2;
 
       .blog-img {
         width: 100%;
@@ -68,6 +69,56 @@
         &:hover {
           background-color: #e62d2a;
         }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .blog-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    place-items: center;
+    padding: 0 15px;
+    margin: 0 auto 30px;
+
+    .blog-item {
+      flex-direction: column;
+      justify-content: space-between;
+
+      .blog-image-cont {
+        width: 310px;
+        height: 280px;
+      }
+
+      .blog-info {
+        width: 310px;
+        height: 280px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-content {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+
+    .blog-item {
+      flex-direction: column;
+      margin: 0 0 20px;
+
+      .blog-image-cont {
+        width: 100%;
+        height: 210px;
+      }
+
+      .blog-info {
+        width: 100%;
+        height: auto;
       }
     }
   }

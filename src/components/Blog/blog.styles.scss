@@ -31,12 +31,53 @@
     .blog-watermark {
       position: absolute;
       z-index: 0;
+      line-height: 1;
+      text-align: center;
+      width: 100%;
+      overflow: hidden;
       text-transform: uppercase;
       font-size: 200px;
       font-weight: 800;
       margin: 115px 0 0;
       color: #868e96;
       opacity: 0.1;
+    }
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .blog-cont {
+    .blog-text-cont {
+      .blog-watermark {
+        position: absolute;
+        z-index: 0;
+        line-height: 0.8;
+        text-align: center;
+        width: 100%;
+        overflow: hidden;
+        text-transform: uppercase;
+        font-size: 200px;
+        font-weight: 800;
+        margin: 280px 0 0;
+        color: #868e96;
+        opacity: 0.1;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-cont {
+    .blog-text-cont {
+      .blog-title {
+        font-size: 30px;
+      }
+
+      .blog-watermark {
+        line-height: 0.8;
+        font-size: 100px;
+        margin: 120px 0 0;
+      }
     }
   }
 }

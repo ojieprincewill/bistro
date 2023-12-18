@@ -81,9 +81,64 @@ const Header = () => {
     backgroundPosition: "center center",
     backgroundRepeat: "no-repeat",
     transition: "background-image 1s ease",
+    position: "relative",
     width: "100%",
-    height: "100vh",
+    height: "100dvh",
   };
+
+  const mobileBreakpoint = 600;
+
+  const isPhoneScreen = window.innerWidth <= mobileBreakpoint;
+
+  if (isPhoneScreen) {
+    return (
+      <>
+        <Navigation />
+        <div style={containerStyles}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            onMouseEnter={() => setShowArrows(true)}
+            onMouseLeave={() => setShowArrows(false)}
+            className="header"
+          >
+            <p className="head-title">{headText[currentIndex]}</p>
+            {showArrows && (
+              <span
+                className="arrow left"
+                onClick={() => handleArrowClick("left")}
+              >
+                &#10094;
+              </span>
+            )}
+            <p className="head-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            {showArrows && (
+              <span
+                className="arrow right"
+                onClick={() => handleArrowClick("right")}
+              >
+                &#10095;
+              </span>
+            )}
+            <button className="head-button">Get started</button>
+          </motion.div>
+          <div className="pagination-dots">
+            {images.map((_, index) => (
+              <span
+                key={index}
+                className={`dot ${index === currentIndex ? "active" : ""}`}
+                onClick={() => handleDotClick(index)}
+              ></span>
+            ))}
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>

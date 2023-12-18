@@ -13,7 +13,7 @@ body {
   font-weight: 300;
   line-height: 1.5;
   background-color: #fff;
-  /* overflow-x: hidden; */
+  /* overflow: hidden; */
 }
 
 a {
@@ -25,10 +25,10 @@ img {
   border-style: none;
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 8px;
-} */
+}
 
-/* ::-webkit-scrollbar-thumb {
-  background-color: #fce82f;
-} */
+::-webkit-scrollbar-thumb {
+  background-color: #cf1d16;
+}

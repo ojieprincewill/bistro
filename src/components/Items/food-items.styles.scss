@@ -20,6 +20,7 @@
 
     .food-title {
       font-size: 25px;
+      text-align: center;
       font-weight: 500;
       color: #cf1d16;
       margin: 0 0 24px 0;
@@ -31,6 +32,27 @@
       color: #868e96;
       margin: 0 0 16px 0;
       text-align: center;
+    }
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .food-items-cont {
+    flex-wrap: wrap;
+
+    .food-items {
+      width: calc(50% - 20px);
+      margin: 0 0 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .food-items-cont {
+    flex-direction: column;
+
+    .food-items {
+      margin: 0 0 40px;
     }
   }
 }

@@ -63,7 +63,7 @@ const MenuGrid = () => {
     >
       <div className="menu-flex">
         {menuItems.slice(0, 2).map((item) => (
-          <div className="item-flex">
+          <div className="item-flex1">
             <div className="card-text">
               <span className="menuitem-title">{item.title}</span>
               <span className="menuitem-description">{item.description}</span>
@@ -77,14 +77,14 @@ const MenuGrid = () => {
       </div>
       <div className="menu-flex">
         {menuItems.slice(2, 4).map((item) => (
-          <div className="item-flex">
-            <div className="card-image-cont">
-              <img src={item.image} alt={item.title} className="card-image" />
-            </div>
+          <div className="item-flex2">
             <div className="card-text">
               <span className="menuitem-title">{item.title}</span>
               <span className="menuitem-description">{item.description}</span>
               <span className="menuitem-price">{item.price}</span>
+            </div>
+            <div className="card-image-cont">
+              <img src={item.image} alt={item.title} className="card-image" />
             </div>
           </div>
         ))}

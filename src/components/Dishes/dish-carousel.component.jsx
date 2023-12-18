@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./dish-carousel.styles.scss";
 
@@ -28,19 +28,7 @@ const dishes = [
   },
 ];
 
-const dishWidth = 420;
-
 const DishCarousel = () => {
-  const [currentDishIndex, setCurrentDishIndex] = useState(0);
-
-  const handlePaginationDotClick = (index) => {
-    setCurrentDishIndex(index);
-  };
-
-  const calculateOffset = () => {
-    return -((currentDishIndex - 1) * dishWidth);
-  };
-
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
@@ -65,12 +53,7 @@ const DishCarousel = () => {
         transition={transition}
         className="carousel-container"
       >
-        <div
-          className="carousel-wrapper"
-          style={{
-            transform: `translate3d(${calculateOffset()}px, 0, 0)`,
-          }}
-        >
+        <div className="carousel-wrapper">
           {dishes.map((dish, index) => (
             <div key={index} className="carousel-item">
               <img src={dish.image} alt={dish.title} className="dish-image" />
@@ -82,15 +65,6 @@ const DishCarousel = () => {
           ))}
         </div>
       </motion.div>
-      <div className="dish-pagination-dots">
-        {dishes.map((_, index) => (
-          <span
-            key={index}
-            className={`dishdot ${index === currentDishIndex ? "active" : ""}`}
-            onClick={() => handlePaginationDotClick(index)}
-          ></span>
-        ))}
-      </div>
     </>
   );
 };

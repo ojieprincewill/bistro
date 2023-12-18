@@ -65,3 +65,42 @@
     }
   }
 }
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .newsletter {
+    padding: 70px 15px;
+
+    .news-text {
+      width: 90%;
+    }
+
+    .form-cont {
+      display: grid;
+      width: 95%;
+      gap: unset;
+      grid-template-columns: 65% 35%;
+      margin: 0 auto 0 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .newsletter {
+    .news-text {
+      width: 90%;
+    }
+
+    .form-cont {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 90%;
+      margin: 0 auto;
+
+      .sub-btn {
+        width: 100%;
+        margin: unset;
+      }
+    }
+  }
+}
