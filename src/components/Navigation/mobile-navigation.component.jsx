@@ -9,11 +9,7 @@ const MobileNavigation = ({ navDisplay }) => {
   return (
     <div className={`mobile-nav ${navDisplay ? "animate-height" : ""}`}>
       <div className="navlinks">
-        <Link
-          onClick={() => window.scrollTo(0, 0)}
-          to="/home"
-          className="navlink"
-        >
+        <Link onClick={() => window.scrollTo(0, 0)} to="/" className="navlink">
           Home
         </Link>
         <Link
