@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback, useMemo } from "react";
 import "./header.styles.scss";
 import Navigation from "../Navigation/navigation.component";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -83,7 +84,7 @@ const Header = () => {
     transition: "background-image 1s ease",
     position: "relative",
     width: "100%",
-    height: "100dvh",
+    height: "100vh",
   };
 
   const mobileBreakpoint = 600;
@@ -124,7 +125,13 @@ const Header = () => {
                 &#10095;
               </span>
             )}
-            <button className="head-button">Get started</button>
+            <Link
+              to="/"
+              onClick={() => window.scrollTo(0, 0)}
+              className="head-button"
+            >
+              Get started
+            </Link>
           </motion.div>
           <div className="pagination-dots">
             {images.map((_, index) => (
