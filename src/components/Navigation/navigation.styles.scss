@@ -31,7 +31,14 @@
       font-weight: 500;
       color: #fff;
       text-transform: uppercase;
+      transition: all 0.3s ease;
       cursor: pointer;
+
+      &.active-navlink,
+      &:active {
+        color: #cf1d16;
+        font-weight: 600px;
+      }
 
       &.with-dropdown {
         position: relative;

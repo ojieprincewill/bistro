@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 
 import "./navigation.styles.scss";
@@ -9,6 +9,7 @@ import MobileNavigation from "./mobile-navigation.component";
 const Navigation = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [navDisplay, setNavDisplay] = useState(false);
+  const location = useLocation();
 
   const handleBurgerClick = () => {
     setNavDisplay(!navDisplay);
@@ -25,22 +26,28 @@ const Navigation = () => {
         <div className="navlinks">
           <Link
             onClick={() => window.scrollTo(0, 0)}
-            to="/home"
-            className="navlink"
+            to="/"
+            className={`navlink ${
+              location.pathname === "/" && "active-navlink"
+            }`}
           >
             Home
           </Link>
           <Link
             onClick={() => window.scrollTo(0, 0)}
             to="/recipes"
-            className="navlink"
+            className={`navlink ${
+              location.pathname === "/recipes" && "active-navlink"
+            }`}
           >
             Recipes
           </Link>
           <Link
             onClick={() => window.scrollTo(0, 0)}
             to="/services"
-            className="navlink with-dropdown"
+            className={`navlink with-dropdown ${
+              location.pathname === "/services" && "active-navlink"
+            }`}
             onMouseEnter={() => setShowDropdown(true)}
             onMouseLeave={() => setShowDropdown(false)}
           >
@@ -77,14 +84,18 @@ const Navigation = () => {
           <Link
             to="/about"
             onClick={() => window.scrollTo(0, 0)}
-            className="navlink"
+            className={`navlink ${
+              location.pathname === "/about" && "active-navlink"
+            }`}
           >
             About
           </Link>
           <Link
             to="/blog"
             onClick={() => window.scrollTo(0, 0)}
-            className="navlink"
+            className={`navlink ${
+              location.pathname.includes("/blog") && "active-navlink"
+            }`}
           >
             News
           </Link>
@@ -92,7 +103,9 @@ const Navigation = () => {
         <Link
           to="/contact"
           onClick={() => window.scrollTo(0, 0)}
-          className="contact-cont"
+          className={`contact-cont ${
+            location.pathname === "/contact" && "active-navlink"
+          }`}
         >
           <button className="contact-btn">Contact us</button>
         </Link>
