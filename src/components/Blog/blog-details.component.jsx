@@ -117,7 +117,7 @@ const BlogDetails = () => {
           </div>
           <div className="detail-image-cont">
             <img
-              src="https://preview.colorlib.com/theme/eatery/img/hero_1.jpg.webp"
+              src="https://cdn.pixabay.com/photo/2017/08/10/14/09/restaurant-2623071_1280.jpg"
               alt="hero1"
               className="detail-image"
             />
@@ -283,7 +283,7 @@ const BlogDetails = () => {
         </div>
         <div className="detail-image-cont">
           <img
-            src="https://preview.colorlib.com/theme/eatery/img/hero_1.jpg.webp"
+            src="https://cdn.pixabay.com/photo/2017/08/10/14/09/restaurant-2623071_1280.jpg"
             alt="hero1"
             className="detail-image"
           />

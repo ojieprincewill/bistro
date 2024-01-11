@@ -27,14 +27,14 @@ const About = () => {
           <div className="about-image-flex">
             <div className="about-image-cont">
               <img
-                src="https://preview.colorlib.com/theme/eatery/img/hero_1.jpg.webp"
+                src="https://cdn.pixabay.com/photo/2015/09/14/11/43/restaurant-939437_1280.jpg"
                 alt="cooking"
                 className="about-image"
               />
             </div>
             <div className="about-image-cont">
               <img
-                src="https://preview.colorlib.com/theme/eatery/img/hero_2.jpg.webp"
+                src="https://cdn.pixabay.com/photo/2017/08/10/14/09/restaurant-2623071_1280.jpg"
                 alt="cooking"
                 className="about-image"
               />
@@ -85,14 +85,14 @@ const About = () => {
         <div className="about-image-flex">
           <div className="about-image-cont">
             <img
-              src="https://preview.colorlib.com/theme/eatery/img/hero_1.jpg.webp"
+              src="https://cdn.pixabay.com/photo/2015/09/14/11/43/restaurant-939437_1280.jpg"
               alt="cooking"
               className="about-image"
             />
           </div>
           <div className="about-image-cont">
             <img
-              src="https://preview.colorlib.com/theme/eatery/img/hero_2.jpg.webp"
+              src="https://cdn.pixabay.com/photo/2017/08/10/14/09/restaurant-2623071_1280.jpg"
               alt="cooking"
               className="about-image"
             />

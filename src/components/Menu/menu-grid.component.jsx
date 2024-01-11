@@ -15,7 +15,8 @@ const menuItems = [
   },
 
   {
-    image: "https://preview.colorlib.com/theme/eatery/img/dishes_1.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2018/07/26/22/23/dough-3564744_1280.jpg",
     title: "Seared ahi tuna fillet*, tom yi sauce",
     price: "$12.99",
     description:
@@ -29,7 +30,8 @@ const menuItems = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo delectus...",
   },
   {
-    image: "https://preview.colorlib.com/theme/eatery/img/dishes_3.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2014/01/24/04/36/roasted-250875_1280.jpg",
     title: "Spicy Calamari and beans",
     price: "$13.50",
     description:

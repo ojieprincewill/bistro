@@ -12,8 +12,8 @@ const Header = () => {
 
   const images = useMemo(
     () => [
-      "https://preview.colorlib.com/theme/eatery/img/hero_2.jpg.webp",
-      "https://preview.colorlib.com/theme/eatery/img/hero_1.jpg.webp",
+      "https://cdn.pixabay.com/photo/2018/12/04/16/49/tandoori-3856045_1280.jpg",
+      "https://cdn.pixabay.com/photo/2019/09/20/05/46/cook-4490870_1280.jpg",
     ],
     []
   );
